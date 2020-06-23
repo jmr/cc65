@@ -78,10 +78,6 @@ $(WORKDIR)/goto.$1.$2.prg: goto.c $(DIFF)
 	$(DIFF) $(WORKDIR)/goto.$1.out goto.ref
 
 # the rest are tests that fail currently for one reason or another
-$(WORKDIR)/fields.$1.$2.prg: fields.c | $(WORKDIR)
-	@echo "FIXME: " $$@ "currently will fail."
-	$(CL65) -t sim$2 -$1 -o $$@ $$< $(NULLERR)
-	-$(SIM65) $(SIM65FLAGS) $$@ $(NULLOUT)
 $(WORKDIR)/sitest.$1.$2.prg: sitest.c | $(WORKDIR)
 	@echo "FIXME: " $$@ "currently will fail."
 	-$(CL65) -t sim$2 -$1 -o $$@ $$< $(NULLERR)

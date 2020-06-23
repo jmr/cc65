@@ -22,8 +22,9 @@ main()
 struct foo {
         int16_t a;
         char b;
-        int16_t x : 12, y : 4;
-        int16_t zz : 1, : 0, : 4, z : 3;
+        /* cc65 uses unsigned for bitfields, so use it here. */
+        uint16_t x : 12, y : 4;
+        uint16_t zz : 1, : 0, : 4, z : 3;
         char c;
 } x = { 1, 2, 3, 4, 5, 6 };
 
